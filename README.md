@@ -26,7 +26,8 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+First set a const equal to getElementById("header")
+Added an event listener that calls the toggleColor method on header
 ```
 
 ## Deliverable 2: Create Player
@@ -43,7 +44,10 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
-
+got the form using getElement
+created a eventlistener on the entire form and ran it on "submit"
+created a "player" within the function and set the player attributes to the form attributes
+ran renderplayer(player)
 ```
 
 ## Deliverable 3: Like Button
@@ -54,5 +58,10 @@ You can decide if you'd like to use *event delegation* to handle this, or if you
 
 **YOUR NOTES**
 ```
-
+created an event listener on the entire player container
+used event delegation to check for which like button was clicked
+went up to the parent div and got the "likes"
+took the " likes" string out of the likes
+parseInt on what's left and added one
+interpolated the new likes into the "likes" inner text
 ```

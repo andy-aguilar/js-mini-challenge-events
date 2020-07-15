@@ -29,9 +29,9 @@ PLAYERS.forEach(renderPlayer)
 /***** End of Starter Code ****/
 
 
-
-
 /***** Deliverable 1 *****/
+const topHeader = document.getElementById("header")
+
 function toggleColor(element) {
   if (element.style.color === "red") {
     element.style.color = "black"
@@ -40,7 +40,34 @@ function toggleColor(element) {
   }
 }
 
+topHeader.addEventListener("click", function(e){
+  toggleColor(e.target)
+})
+
 
 /***** Deliverable 2 *****/
+const playerForm = document.getElementById("new-player-form")
+
+playerForm.addEventListener("submit", function(e){
+  e.preventDefault()
+  // console.dir(e)
+  let player = {};
+  player.name = e.target.name.value;
+  player.nickname = e.target.nickname.value;
+  player.number = parseInt(e.target.number.value, 10);
+  player.photo = e.target.photo.value;
+  player.likes = 0;
+  renderPlayer(player)
+  e.target.reset()
+})
 
 /***** Deliverable 3 *****/
+
+playerContainer.addEventListener("click", function(e){
+  console.dir(e.target)
+  if (e.target.className === "like-button"){
+    let likes = e.target.parentElement.querySelector(".likes").innerText.replace(" likes", "")
+    let newLikes = (parseInt(likes, 10) + 1)
+    e.target.parentElement.querySelector(".likes").innerText = `${newLikes} likes`
+  }
+})
